@@ -33,3 +33,6 @@ Usuari final: L'eina està pensada per a:
 
 Limitacions: Algunes funcionalitats previstes, com la implementació correcta de 2FA o l'ús d'algorismes criptogràfics avançats, poden requerir l'estudi de llibreries i conceptes que el grup encara no ha treballat en profunditat.
 
+prueva de cambio
+
+esto es para ver si se hace update el jira
