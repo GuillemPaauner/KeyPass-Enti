@@ -61,8 +61,24 @@ Les llibreries necessàries per a aquestes funcionalitats ja estan definides al 
 
 - Python 3.10 o superior
 - Sistema operatiu compatible amb Python
+- Els fitxers main.py, generar_contrasenya.py i guardar_contrasenya.py han d’estar a la mateixa carpeta.
 
 ### Dependències
+
+En la versió ALPHA només fem servir llibreria estàndard de Python, o sigui, res d’instal·lar amb pip:
+​
+    - string: per obtenir lletres majúscules i minúscules.
+
+    - random: per triar caràcters aleatoris de la contrasenya.
+​
+
+    - json: per guardar les contrasenyes en format JSON al fitxer.
+​
+
+    - pathlib.Path: per comprovar si el fitxer de base de dades existeix.
+​
+
+No hi ha cap requirements.txt perquè no hi ha paquets externs.
 
 Instal·lació de dependències (preparades per a futures versions):
 
