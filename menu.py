@@ -1,4 +1,4 @@
-
+#AQUEST VA SER EL MENNU INICIAL PERO NO ES FA SERVIR-- EL PODRIEM ELIMINAR
 def Crear_menu():
     ancho = 31
 
@@ -19,3 +19,4 @@ def Crear_menu():
             print("        " + linea)
             
 Crear_menu()
+
