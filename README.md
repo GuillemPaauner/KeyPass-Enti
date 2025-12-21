@@ -1,38 +1,70 @@
-# KeyPass-Enti
-Gestor de Contrasenyes: 
 
-Resum: El nostre treball consisteix en un gestor de contrasenyes desenvolupat íntegrament en Python que permet emmagatzemar, gestionar i protegir credencials mitjançant xifratge robust i mecanismes d'autenticació reforçada. 
- 
-Descripcio detallada:
+# KEYPASS-ENTI
 
- El programa serà un gestor de contrasenyes que permetrà crear, guardar, editar i eliminar contrasenyes associades a diferents serveis (correu, xarxes socials, plataformes, etc.) de forma centralitzada i segura. 
+Gestor de Contrasenyes – Alpha Release
 
-La principal i més important funció serà la de emmagatzemar de manera encriptada totes les contrasenyes per mantenir-les de manera més segura. 
+KEYPASS-ENTI és un gestor de contrasenyes desenvolupat en Python amb finalitats educatives. Permet generar, emmagatzemar i consultar credencials de manera centralitzada mitjançant una interfície de línia de comandes.  
+El projecte es troba actualment en fase Alpha, amb funcionalitats bàsiques implementades i una base preparada per a futures millores de seguretat.
 
+---
 
-Les funcionalitats principals són:  
+## Estat del projecte
 
-•	Generador de contrasenyes segures: Personalitzable per longitud, tipus de caràcters i nivell de complexitat. 
+Versió Alpha.  
+Aquesta versió inclou funcionalitats mínimes operatives. No es recomana el seu ús en entorns reals ni amb credencials sensibles.
 
-•	Autenticació de doble factor (2FA): Via correu electrònic o aplicació tipus authenticator per accedir al gestor. 
+---
 
-•	Validació de contrasenyes febles: Avís automàtic si una contrasenya és feble o es repeteix en diversos serveis. 
+## Funcionalitats implementades
 
-•	Comprovació d’integritat amb HMAC: El gestor calcularà un codi d’autenticació (HMAC) sobre les dades xifrades per detectar qualsevol manipulació o corrupció abans de desxifrar la informació, garantint la integritat de les credencials emmagatzemades.
+- Generació de contrasenyes segures
+- Emmagatzematge local de contrasenyes
+- Llistat de serveis guardats
+- Cerca de contrasenyes per servei
+- Interfície per consola (CLI)
 
-•	Esquema de xifratge híbrid Simple: Les contrasenyes es protegiran amb un esquema híbrid que combina un algoritme simètric per xifrar les dades i un mecanisme derivat de la contrasenya mestra per protegir i gestionar les claus, millorant la confidencialitat i la gestió segura de claus al gestor.
+### Generador de contrasenyes
+- Longitud configurable (mínim 8 caràcters)
+- Inclou:
+  - Lletres majúscules
+  - Lletres minúscules
+  - Dígits
+  - Símbols especials
+- Compleix requisits bàsics de seguretat
 
+### Gestió de contrasenyes
+- Emmagatzema credencials associades a:
+  - Servei
+  - Usuari
+  - Contrasenya
+- Persistència local mitjançant fitxer
+- Consulta individual de contrasenyes per servei
 
-Motivació: La motivació principal és el fet de millorar la seguretat de les credencials dels usuaris, evitant pràctiques insegures com reutilitzar contrasenyes o guardar-les en text pla. Aquest projecte permet aplicar coneixements de programació en Python i conceptes de ciberseguretat apresos durant el curs.
+---
 
-Usuari final: L'eina està pensada per a:
--	Usuaris que vulguin gestionar de forma segura les seves contrasenyes
--	Estudiants i treballadors que necessiten controlar múltiples credencials
--	Petits administradors de sistemes
--	Persones que vulguin entendre millor com funcionen els gestors de contrasenyes i les tècniques de protecció de dades
+## Funcionalitats previstes (no implementades en aquesta versió)
 
-Limitacions: Algunes funcionalitats previstes, com la implementació correcta de 2FA o l'ús d'algorismes criptogràfics avançats, poden requerir l'estudi de llibreries i conceptes que el grup encara no ha treballat en profunditat.
+Les funcionalitats següents formen part del disseny del projecte, però no estan desenvolupades en la versió Alpha:
 
-prueva de cambio
+- Xifratge de les contrasenyes
+- Autenticació mitjançant contrasenya mestra
+- Autenticació de doble factor (2FA)
+- Detecció de contrasenyes febles o repetides
+- Verificació d’integritat amb HMAC
+- Esquema de xifratge híbrid
 
-esto es para ver si se hace update el jira
+Les llibreries necessàries per a aquestes funcionalitats ja estan definides al fitxer `requirements.txt`.
+
+---
+
+## Requisits
+
+- Python 3.10 o superior
+- Sistema operatiu compatible amb Python
+
+### Dependències
+
+Instal·lació de dependències (preparades per a futures versions):
+
+bash
+pip install -r requirements.txt
