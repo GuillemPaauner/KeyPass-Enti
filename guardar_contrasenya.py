@@ -28,3 +28,31 @@ def guardar_contrasenya(servei:str, usuari:str, contrasenya:str) -> None:
     
     print(f"Contrasenya guardada para servei {servei}")
     
+    
+def llistar_contrasenya() ->None:
+    "Mostra les contrasenyes guardades"
+    dades=carregar_contrasenya()
+    
+    if not dades:
+        print("No hi han contrasenyes guardades")
+        return
+    
+    
+    print("---- Contrasenya guardades ----")
+    for index, dada in enumerate(dades, 1):
+        print(f"{index}. Servei: {dada['servei']}, Usuari: {dada['usuari']}")
+    print()
+
+
+def veure_contrasenya(servei: str) -> None:
+    "Mostra contrasenya de servei especific"
+    dades = carregar_contrasenya()
+
+    for dada in dades:
+        if dada["servei"].lower() == servei.lower():
+            print(f"Servei: {dada['servei']}")
+            print(f"Usuari: {dada['usuari']}")
+            print(f"Contrasenya: {dada['contrasenya']}\n")
+            return
+    
+    print(f"No s'ha trobat cap contrasenya per al servei '{servei}'.")
