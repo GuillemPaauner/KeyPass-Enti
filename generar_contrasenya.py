@@ -37,7 +37,8 @@ def generar_contrasenya(longitud: int = 12) -> str:
         contrasenya.append(random.choice(tots_caracters))
         
   
-    return print(contrasenya)
+    contrasenya_final = "".join(contrasenya)
+    return print(contrasenya_final)
         
     
 
