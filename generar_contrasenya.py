@@ -38,7 +38,8 @@ def generar_contrasenya(longitud: int = 12) -> str:
         
   
     contrasenya_final = "".join(contrasenya)
-    return print(contrasenya_final)
+    #return print(contrasenya_final)"AIXO ES UN DEBUG"
+    return contrasenya_final
         
     
 
