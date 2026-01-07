@@ -3,7 +3,7 @@ import os  # Usamos os en lugar de Path
 from xifrat_hibrid import carregar_clau, xifrar_text, desxifrar_text
 from hmac_integritat import generar_hmac, verificar_hmac
 
-# Nombre del archivo donde guardamos las contraseñas cifradas
+# Nombre del archivo donde guardamos las contrasenas cifradas
 PASSWORDS_DB = "PasswordsBBDD.bin"  
 
 # Nombre del archivo donde guardamos el HMAC
@@ -14,7 +14,7 @@ CLAU_FERNET = carregar_clau()
 
 
 def carregar_contrasenya() -> list:
-    # Si el archivo no existe, devolvemos lista vacía
+    # Si el archivo no existe, devolvemos lista vacia
     if not os.path.exists(PASSWORDS_DB):
         return []
 
@@ -28,24 +28,24 @@ def carregar_contrasenya() -> list:
             with open(HMAC_DB, "r") as f:
                 hmac_guardat = f.read().strip()
             if not verificar_hmac(dades_cifrades, hmac_guardat):
-                print("⚠️ Archivo corrupto o modificado")
+                print(" Archivo corrupto o modificado")
                 return []
 
-        # Desciframos las contraseñas con Fernet
+        # Desciframos las contrasenas con Fernet
         dades_json = desxifrar_text(dades_cifrades, CLAU_FERNET)
         # Convertimos de JSON a lista de diccionarios
         return json.loads(dades_json)
 
     except:
-        print("❌ Error carregant")
+        print(" Error carregant")
         return []
 
 
 def guardar_contrasenya(servei: str, usuari: str, contrasenya: str) -> None:
     try:
-        # Cargamos las contraseñas existentes
+        # Cargamos las contrasenas existentes
         dades = carregar_contrasenya()
-        # Añadimos la nueva
+        # Anadimos la nueva
         dades.append({"servei": servei, "usuari": usuari, "contrasenya": contrasenya})
 
         # Convertimos a JSON
@@ -62,10 +62,10 @@ def guardar_contrasenya(servei: str, usuari: str, contrasenya: str) -> None:
         with open(HMAC_DB, "w") as f:
             f.write(hmac_text)
 
-        print(f"✅ Guardat: {servei}")
+        print(f" Guardat: {servei}")
 
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
 
 def llistar_contrasenya() -> None:
     dades = carregar_contrasenya()
