@@ -1,0 +1,32 @@
+{
+  "boris.emilov1@gmail.com": {
+    "password_hash": "efbf946958069722cee3a5f646be51f9ae7177b7567ecb5b276aa3d4f86aa72d",
+    "email": "boris.emilov1@gmail.com",
+    "user_id": "d8f46ac66592"
+  },
+  "ismael.araujo@estudiant.enti.cat": {
+    "password_hash": "6ab6b14a81a53e54d6efd5670575f240fb42b094058ac914e9185bd5e2ac3f58",
+    "email": "ismael.araujo@estudiant.enti.cat",
+    "user_id": "031f1af15654"
+  },
+  "didac.gonzalez@estudiant.enti.cat": {
+    "password_hash": "0c0827004bf93e8ae93d90c8345835605748ed0091f2782fde343d4865f7f8bf",
+    "email": "didac.gonzalez@estudiant.enti.cat",
+    "user_id": "565c116cbbad"
+  },
+  "guillem.pauner@estudiant.enti.cat": {
+    "password_hash": "69b7be1e981c0a7e1127b87e01789caebbf97c6527f95c382ec9366de2f115ea",
+    "email": "guillem.pauner@estudiant.enti.cat",
+    "user_id": "9ff5c9a93aaf"
+  },
+  "alex.llunell@estudiant.enti.cat": {
+    "password_hash": "6f43a50b04c14f6c1a7a68871c1ae6b04be466e8d497d3fa7a3a67b538e6cf58",
+    "email": "alex.llunell@estudiant.enti.cat",
+    "user_id": "dbc66bd3ff77"
+  },
+  "boris.emilov@estudiant.enti.cat": {
+    "password_hash": "d37911e53658c8634f6b4cb56c315ed7d60dd8f88f4e449f2da91084b228c4b0",
+    "email": "boris.emilov@estudiant.enti.cat",
+    "user_id": "65ba49b2a91b"
+  }
+}
