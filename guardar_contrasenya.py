@@ -32,7 +32,7 @@ def carregar_contrasenya(): # Esta parte se encarga de leer y descifrar las cont
                 hmac_guardat = f.read().strip()
 
             if not verificar_hmac(dades_cifrades, hmac_guardat):
-                print("Archivo modificado o corrupto")
+                print("Archiu modificat o corrupte")
                 return []
 
         # Descifrar y convertir a JSON
@@ -40,14 +40,14 @@ def carregar_contrasenya(): # Esta parte se encarga de leer y descifrar las cont
         return json.loads(dades_json)
 
     except Exception as e:
-        print("Error cargando contraseñas:", e)
+        print("Error carregant contrasenyes:", e)
         return []
 
 
 def guardar_contrasenya(servei, usuari, contrasenya):
     # Añade una nueva contraseña
     if not PASSWORDS_DB:
-        print("Usuario no configurado")
+        print("Usuario no configurat")
         return
 
     try:
@@ -55,9 +55,9 @@ def guardar_contrasenya(servei, usuari, contrasenya):
 
         # Guardamos todo en una lista de diccionarios
         dades.append({
-            "servei": servei,
-            "usuari": usuari,
-            "contrasenya": contrasenya
+            "Servei": servei,
+            "Usuari": usuari,
+            "Contrasenya": contrasenya
         })
 
         # Cifrar datos
@@ -99,4 +99,4 @@ def veure_contrasenya(servei):
             print(f"Contraseña: {d['contrasenya']}")
             return
 
-    print("Servicio no encontrado")
+    print("Servei no trobat")
