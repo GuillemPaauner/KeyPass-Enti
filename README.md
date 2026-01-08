@@ -1,10 +1,10 @@
-# KeyPass‑ENTI
+# KeyPass
 
 ## Català
 
 ### Descripció del projecte
 
-**KeyPass‑ENTI** és un gestor de contrasenyes desenvolupat en **Python** com a projecte acadèmic, amb l’objectiu d’aplicar conceptes reals de **ciberseguretat**, **xifratge** i **gestió segura de credencials**. El projecte combina bones pràctiques professionals amb un enfocament didàctic propi d’un entorn d’estudiant.
+**KeyPass** és un gestor de contrasenyes desenvolupat en **Python** com a projecte acadèmic, amb l’objectiu d’aplicar conceptes reals de **ciberseguretat**, **xifratge** i **gestió segura de credencials**. El projecte combina bones pràctiques professionals amb un enfocament didàctic propi d’un entorn d’estudiant.
 
 L’aplicació permet registrar usuaris, generar contrasenyes segures, emmagatzemar-les de forma xifrada, verificar-ne la integritat i reforçar l’accés mitjançant **autenticació de doble factor (2FA)**.
 
@@ -29,7 +29,7 @@ L’aplicació permet registrar usuaris, generar contrasenyes segures, emmagatze
 ### Estructura del projecte
 
 ```
-KeyPass-ENTI/
+Keypass/
 ├── main_contrasenyes.py
 ├── registrar_usuario.py
 ├── gestio_usuaris.py
@@ -81,7 +81,7 @@ Aquest projecte ha permès entendre de forma pràctica com es protegeixen creden
 
 ### Project Description
 
-**KeyPass‑ENTI** is a password manager developed in **Python** as an academic project, designed to apply real‑world concepts of **cybersecurity**, **encryption**, and **secure credential management**. The project blends professional practices with a student‑level educational approach.
+**KeyPass** is a password manager developed in **Python** as an academic project, designed to apply real‑world concepts of **cybersecurity**, **encryption**, and **secure credential management**. The project blends professional practices with a student‑level educational approach.
 
 The application allows user registration, secure password generation, encrypted storage of credentials, integrity verification, and access protection through **two‑factor authentication (2FA)**.
 
@@ -106,7 +106,7 @@ The application allows user registration, secure password generation, encrypted 
 ### Project Structure
 
 ```
-KeyPass-ENTI/
+Keypass/
 ├── main_contrasenyes.py
 ├── registrar_usuario.py
 ├── gestio_usuaris.py
