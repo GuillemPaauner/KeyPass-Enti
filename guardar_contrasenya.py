@@ -55,9 +55,9 @@ def guardar_contrasenya(servei, usuari, contrasenya):
 
         # Guardamos todo en una lista de diccionarios
         dades.append({
-            "Servei": servei,
-            "Usuari": usuari,
-            "Contrasenya": contrasenya
+            "servei": servei,
+            "usuari": usuari,
+            "contrasenya": contrasenya
         })
 
         # Cifrar datos
