@@ -1,86 +1,157 @@
+# KeyPass‑ENTI
 
-# KEYPASS-ENTI
+## Català
 
-Gestor de Contrasenyes – Alpha Release
+### Descripció del projecte
 
-KEYPASS-ENTI és un gestor de contrasenyes desenvolupat en Python amb finalitats educatives. Permet generar, emmagatzemar i consultar credencials de manera centralitzada mitjançant una interfície de línia de comandes.  
-El projecte es troba actualment en fase Alpha, amb funcionalitats bàsiques implementades i una base preparada per a futures millores de seguretat.
+**KeyPass‑ENTI** és un gestor de contrasenyes desenvolupat en **Python** com a projecte acadèmic, amb l’objectiu d’aplicar conceptes reals de **ciberseguretat**, **xifratge** i **gestió segura de credencials**. El projecte combina bones pràctiques professionals amb un enfocament didàctic propi d’un entorn d’estudiant.
 
----
+L’aplicació permet registrar usuaris, generar contrasenyes segures, emmagatzemar-les de forma xifrada, verificar-ne la integritat i reforçar l’accés mitjançant **autenticació de doble factor (2FA)**.
 
-## Estat del projecte
+### Objectius
 
-Versió Alpha.  
-Aquesta versió inclou funcionalitats mínimes operatives. No es recomana el seu ús en entorns reals ni amb credencials sensibles.
+* Aplicar xifratge híbrid per a la protecció de dades sensibles
+* Garantir la integritat de les contrasenyes mitjançant HMAC
+* Implementar autenticació amb 2FA
+* Desenvolupar un gestor funcional amb estructura modular
+* Simular el funcionament d’un producte real orientat a seguretat
 
----
+### Funcionalitats principals
 
-## Funcionalitats implementades
+* Gestió d’usuaris (registre i autenticació)
+* Generador de contrasenyes segures personalitzables
+* Detecció de fortalesa de contrasenyes
+* Emmagatzematge xifrat de credencials
+* Xifratge híbrid (simètric + asimètric)
+* Verificació d’integritat amb HMAC
+* Autenticació de doble factor (2FA)
 
-- Generació de contrasenyes segures
-- Emmagatzematge local de contrasenyes
-- Llistat de serveis guardats
-- Cerca de contrasenyes per servei
-- Interfície per consola (CLI)
+### Estructura del projecte
 
-### Generador de contrasenyes
-- Longitud configurable (mínim 8 caràcters)
-- Inclou:
-  - Lletres majúscules
-  - Lletres minúscules
-  - Dígits
-  - Símbols especials
-- Compleix requisits bàsics de seguretat
+```
+KeyPass-ENTI/
+├── main_contrasenyes.py
+├── registrar_usuario.py
+├── gestio_usuaris.py
+├── guardar_contrasenya.py
+├── generar_contrasenya.py
+├── detectar_contrasenya.py
+├── auth_2fa.py
+├── xifrat_hibrid.py
+├── hmac_integritat.py
+├── users.json
+├── requirements.txt
+└── README.md
+```
 
-### Gestió de contrasenyes
-- Emmagatzema credencials associades a:
-  - Servei
-  - Usuari
-  - Contrasenya
-- Persistència local mitjançant fitxer
-- Consulta individual de contrasenyes per servei
+### Tecnologies utilitzades
 
----
+* Python 3
+* Criptografia (xifratge híbrid)
+* HMAC per a integritat
+* Arxius JSON per a persistència de dades
 
-## Funcionalitats previstes (no implementades en aquesta versió)
+### Execució del projecte
 
-Les funcionalitats següents formen part del disseny del projecte, però no estan desenvolupades en la versió Alpha:
+1. Instal·lar dependències:
 
-- Xifratge de les contrasenyes
-- Autenticació mitjançant contrasenya mestra
-- Autenticació de doble factor (2FA)
-- Detecció de contrasenyes febles o repetides
-- Verificació d’integritat amb HMAC
-- Esquema de xifratge híbrid
-
-Les llibreries necessàries per a aquestes funcionalitats ja estan definides al fitxer `requirements.txt`.
-
----
-
-## Requisits
-
-- Python 3.10 o superior
-- Sistema operatiu compatible amb Python
-- Els fitxers main.py, generar_contrasenya.py i guardar_contrasenya.py han d’estar a la mateixa carpeta.
-
-### Dependències
-
-En la versió ALPHA només fem servir llibreria estàndard de Python, o sigui, res d’instal·lar amb pip:
-​
-    - string: per obtenir lletres majúscules i minúscules.
-
-    - random: per triar caràcters aleatoris de la contrasenya.
-​
-
-    - json: per guardar les contrasenyes en format JSON al fitxer.
-​
-
-    - pathlib.Path: per comprovar si el fitxer de base de dades existeix.
-​
-
-No hi ha cap requirements.txt perquè no hi ha paquets externs.
-
-Instal·lació de dependències (preparades per a futures versions):
-
-bash
+```
 pip install -r requirements.txt
+```
+
+2. Executar l’aplicació:
+
+```
+python main_contrasenyes.py
+```
+
+### Limitacions
+
+* Projecte educatiu (no apte per a ús productiu)
+* Gestió local de dades
+* Interfície per consola
+
+### Aprenentatges clau
+
+Aquest projecte ha permès entendre de forma pràctica com es protegeixen credencials, com s’estructura una aplicació de seguretat i quins són els reptes reals en el desenvolupament de software segur.
+
+---
+
+## English
+
+### Project Description
+
+**KeyPass‑ENTI** is a password manager developed in **Python** as an academic project, designed to apply real‑world concepts of **cybersecurity**, **encryption**, and **secure credential management**. The project blends professional practices with a student‑level educational approach.
+
+The application allows user registration, secure password generation, encrypted storage of credentials, integrity verification, and access protection through **two‑factor authentication (2FA)**.
+
+### Objectives
+
+* Apply hybrid encryption for sensitive data protection
+* Ensure password integrity using HMAC
+* Implement two‑factor authentication (2FA)
+* Develop a modular and functional password manager
+* Simulate a real‑world security‑oriented product
+
+### Main Features
+
+* User management (registration and authentication)
+* Secure and customizable password generator
+* Password strength detection
+* Encrypted credential storage
+* Hybrid encryption (symmetric + asymmetric)
+* Integrity verification using HMAC
+* Two‑factor authentication (2FA)
+
+### Project Structure
+
+```
+KeyPass-ENTI/
+├── main_contrasenyes.py
+├── registrar_usuario.py
+├── gestio_usuaris.py
+├── guardar_contrasenya.py
+├── generar_contrasenya.py
+├── detectar_contrasenya.py
+├── auth_2fa.py
+├── xifrat_hibrid.py
+├── hmac_integritat.py
+├── users.json
+├── requirements.txt
+└── README.md
+```
+
+### Technologies Used
+
+* Python 3
+* Cryptography (hybrid encryption)
+* HMAC for integrity verification
+* JSON files for data persistence
+
+### How to Run
+
+1. Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+2. Run the application:
+
+```
+python main_contrasenyes.py
+```
+
+### Limitations
+
+* Educational project (not production‑ready)
+* Local data storage
+* Console‑based interface
+
+### Key Learnings
+
+This project provides hands‑on experience with credential protection, secure software architecture, and the real challenges involved in building cybersecurity‑focused applications.
+
+---
+
+**Project developed as part of a cybersecurity academic course at ENTI‑UB.**
