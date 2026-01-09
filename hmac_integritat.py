@@ -1,25 +1,24 @@
-import hmac        # Librería para crear firmas seguras
-import hashlib     # Librería para usar algoritmos hash
+import hmac        # Llibrería per crear firmes segures
+import hashlib     # Llibrería per usar algoritmes hash
 
-# Clave secreta que solo conoce el programa, la cual se usa para firmar los datos
+# Clau secreta que només coneix el programa, la qual s'utiliztzar per firmar les dades
 CLAU_SECRETA = b"Clau_Secreta_Keypass"   
 
 
 def generar_hmac(dades):
-
-    # Creamos la firma usando la clave secreta, los datos y el algoritmo SHA-256
+    #Creem la frma utilitzant la clau secreta, les dades i l'algoritme SHA-256
     firma = hmac.new(CLAU_SECRETA, dades, hashlib.sha256)
 
-    # Convertimos la firma a texto hexadecimal para poder guardarla
+    # Convertim la firma a text hexadecimal per a poder guardarla
     return firma.hexdigest()
 
 
 def verificar_hmac(dades, hmac_guardat):
 
-    # Volvemos a crear la firma con los datos actuales
+    # Tornem a crear la firma amb les dades actuals
     hmac_actual = generar_hmac(dades)
 
-    # Comparamos la firma nueva con la firma guardada, y si son iguales devuleve true sino es que ha sido cambiada y devuelve false
+    # Comparem la firma nova amb la firma guardada, i si son iguals retorna true sino es que ha estat canviada i retorna false
     if hmac_actual == hmac_guardat:
         return True
     else:
