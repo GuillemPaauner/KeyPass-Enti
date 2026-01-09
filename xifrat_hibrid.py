@@ -2,43 +2,43 @@ from cryptography.fernet import Fernet
 import os
 
 
-# Nombre del archivo donde se guarda la clave
+# Nom de l'arxiu on es guarda la clau
 CLAU_FILE = "clau_fernet.key"
 
 
 def guardar_clau(clau):
-    # Abrimos el archivo en modo escritura binaria (se utiliza para guaradar claves)
+    # Obrim el arxiu en mode escriptura binaria (s'utilitza per a guaradar claus)
     with open(CLAU_FILE, "wb") as f:
-        # Escribimos la clave en el archivo
+        # Escribim la clau a l'arxiu
         f.write(clau)
 
 
 def carregar_clau():
-    # Comprobamos si el archivo de la clave existe
+    #Comprovem si l'arxiu de la clau existeix
     if os.path.exists(CLAU_FILE):
-        # Si existe, abrimos el archivo y leemos la clave binaria
+        # Si existeis, obrim l'arxiu i llegim la clau binària
         with open(CLAU_FILE, "rb") as f:
             return f.read()
 
-    # Si no existe, generamos una clave nueva
+    # Si no existeix, generem una clau nova
     clau = Fernet.generate_key()
 
-    # Guardamos la nueva clave
+    # Guardem la clau nova
     guardar_clau(clau)
     
     return clau
 
 
 def xifrar_text(text, clau):  
-    f = Fernet(clau) # Creamos el objeto Fernet con la clave
+    f = Fernet(clau) # Creem el objecto Fernet amb la clau
 
-    # Convertimos el texto a bytes y lo ciframos
+    # Convertim el text a bytes y el xifrem
     return f.encrypt(text.encode())
 
 
 def desxifrar_text(token, clau):
-    # Creamos el objeto Fernet con la clave
+    # Creem el objecte Fernet amb la clau
     f = Fernet(clau)
 
-    # Desciframos el texto y lo devolvemos como string
+    # Desxifrem el text y el retornem com a string
     return f.decrypt(token).decode()
