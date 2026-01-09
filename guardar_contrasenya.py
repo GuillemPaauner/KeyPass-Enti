@@ -3,30 +3,30 @@ import os
 from xifrat_hibrid import carregar_clau, xifrar_text, desxifrar_text
 from hmac_integritat import generar_hmac, verificar_hmac
 
-# Archivos del usuario actual 
+# Arxius de dades per a cada usuari
 PASSWORDS_DB = None
 HMAC_DB = None
-CLAU_FERNET = carregar_clau() # Clave utilizada para el cifrado 
+CLAU_FERNET = carregar_clau() # Clau utilitzada per xifrar i desxifrar les contrasenyes
 
 
 
-def configurar_usuario(user_id): #Define los archivos segun el usuario
+def configurar_usuario(user_id): #Defineix els noms dels arxius segons l'usuari
     global PASSWORDS_DB, HMAC_DB
     PASSWORDS_DB = f"passwords_{user_id}.bin"
     HMAC_DB = f"passwords_{user_id}.hmac"
 
 
 
-def carregar_contrasenya(): # Esta parte se encarga de leer y descifrar las contraseñas de los usuarios
+def carregar_contrasenya(): # Aquesta part s'encarrega de llegir i desxifrar les contrasenyes dels usuaris
     if not PASSWORDS_DB or not os.path.exists(PASSWORDS_DB):
         return []
 
     try:
-        # Lee el archivo cifrado
+        # Llegeix l'arxiu xifrat
         with open(PASSWORDS_DB, "rb") as f:
             dades_cifrades = f.read()
 
-        # Comprobar integridad con HMAC
+        # Comprovar integritat con HMAC
         if os.path.exists(HMAC_DB):
             with open(HMAC_DB, "r") as f:
                 hmac_guardat = f.read().strip()
@@ -35,7 +35,7 @@ def carregar_contrasenya(): # Esta parte se encarga de leer y descifrar las cont
                 print("Archiu modificat o corrupte")
                 return []
 
-        # Descifrar y convertir a JSON
+        # Desxifrar y convertir a JSON
         dades_json = desxifrar_text(dades_cifrades, CLAU_FERNET)
         return json.loads(dades_json)
 
@@ -45,7 +45,7 @@ def carregar_contrasenya(): # Esta parte se encarga de leer y descifrar las cont
 
 
 def guardar_contrasenya(servei, usuari, contrasenya):
-    # Añade una nueva contraseña
+    # Afegir una nova contrasenya
     if not PASSWORDS_DB:
         print("Usuario no configurat")
         return
@@ -53,21 +53,21 @@ def guardar_contrasenya(servei, usuari, contrasenya):
     try:
         dades = carregar_contrasenya()
 
-        # Guardamos todo en una lista de diccionarios
+        # Es guarda tot en un diccionari
         dades.append({
             "servei": servei,
             "usuari": usuari,
             "contrasenya": contrasenya
         })
 
-        # Cifrar datos
+        # Xifrar diccionari i guardar-lo
         dades_json = json.dumps(dades, ensure_ascii=False)
         dades_cifrades = xifrar_text(dades_json, CLAU_FERNET)
 
         with open(PASSWORDS_DB, "wb") as f:
             f.write(dades_cifrades)
 
-        # Generar HMAC para detectar cambios
+        # Generar HMAC par a detectar canvis
         with open(HMAC_DB, "w") as f:
             f.write(generar_hmac(dades_cifrades))
 
@@ -90,7 +90,7 @@ def llistar_contrasenya():
 
 
 def veure_contrasenya(servei):
-    dades = carregar_contrasenya() # Muestra los servicios de uno en concreto
+    dades = carregar_contrasenya() # Mostra els serveis de un en concret
 
     for d in dades:
         if d["servei"].lower() == servei.lower():
